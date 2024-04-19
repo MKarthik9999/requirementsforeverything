@@ -18,9 +18,14 @@ install_docker_debian() {
 # Function to install Docker on Red Hat-based distributions
 install_docker_redhat() {
     echo "Installing Docker on Red Hat-based distribution..."
+    sudo yum update -y
     sudo yum install docker -y
     sudo systemctl docker start
     sudo usermod -aG docker ec2-user
+    sudo yum update -y
+    sudo curl -SL https://github.com/docker/compose/releases/download/v2.26.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
+    sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 }
 
 # Check for the presence of specific commands to determine the Linux distribution
