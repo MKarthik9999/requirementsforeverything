@@ -13,6 +13,9 @@ install_java_redhat() {
     sudo amazon-linux-extras enable corretto8
     sudo yum install java-17-amazon-corretto-devel -y  #openjdk-17
 
+    # wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.rpm
+    # sudo yum -y install ./jdk-17_linux-x64_bin.rpm
+
     # Uncomment below line if you want to install OpenJDK 11
     # sudo yum install -y java-11-openjdk-devel
 }
